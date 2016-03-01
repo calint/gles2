@@ -1,0 +1,9 @@
+uniform mat4 umvp;// model-view-projection matrix
+attribute vec4 apos;// x y z
+attribute vec4 acol;// r g b a
+varying vec4 vcol;
+
+void main(){
+	gl_Position=umvp*apos;
+	vcol=acol;
+}

@@ -1,0 +1,5 @@
+varying vec4 vcol;
+
+void main(){
+	gl_FragColor=vcol+vec4(gl_FragCoord.x,gl_FragCoord.y,gl_FragCoord.z,1);
+}

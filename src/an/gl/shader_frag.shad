@@ -1,0 +1,9 @@
+uniform sampler2D us;
+uniform vec3 uvec3_ambient_light;
+varying vec2 vtx;
+varying vec4 vcol;
+varying vec3 vnml;
+
+void main(){
+	gl_FragColor=texture2D(us,vtx)+vcol*(1.0+0.9*dot(vnml,uvec3_ambient_light));
+}

@@ -1,0 +1,19 @@
+uniform mat4 umvp;// model-view-projection matrix
+uniform mat4 umat4_model_world;
+
+attribute vec4 apos;// x y z
+attribute vec2 atx;// u v
+attribute vec4 acol;// r g b a
+attribute vec3 anml;// normalized normal vector
+varying vec2 vtx;
+varying vec4 vcol;
+varying vec3 vnml;
+
+void main(){
+	gl_Position=umvp*apos;
+	vtx=atx;
+	vcol=acol;
+
+	mat3 matrix_normals=mat3(umat4_model_world);
+	vnml=normalize(matrix_normals*anml);
+}

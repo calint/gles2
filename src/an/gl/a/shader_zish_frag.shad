@@ -1,0 +1,8 @@
+varying vec4 vcol;
+varying vec3 vnml;
+
+void main(){
+	float z=gl_FragCoord.w;
+	gl_FragColor=vec4(0,0,0,vcol.r)+vec4(0,vnml.x,0,0)+vec4(z*2.,z,z,1); //?? no render if vcol is not used? 
+//	gl_FragColor=vec4(z*2.,z,z,1); //?? does not render 
+}
